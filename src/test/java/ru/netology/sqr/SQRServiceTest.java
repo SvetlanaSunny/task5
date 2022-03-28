@@ -1,8 +1,6 @@
 package ru.netology.sqr;
 
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.CsvSource;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -16,12 +14,12 @@ class SQRServiceTest {
         assertEquals(expected, actual);
     }
 
-    @ParameterizedTest
-    @CsvSource(value = {"sgrCounter1 ,3"})
-    void sqrCounterParam(String testName, int expected){
+    @Test
+    void sqrCounter1() {
         SQRService service = new SQRService();
-        int actual = service.sqrCounter(200,300);
-        assertEquals(expected,actual);
+        int expected = 16; // ожидаемый результат
+        int actual = service.sqrCounter(800, 2000);//фактический результат
+        assertEquals(expected, actual);
     }
 
 
